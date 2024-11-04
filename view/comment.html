@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu chuyện thành công</title>
+    <style>
+        .testimonial-container {
+            width: 80%;
+            margin: 50px auto;
+            margin-top:200px;
+            text-align: center;
+            position: relative;
+            font-family:var(--font_family_body);
+            
+        }
+        
+        .testimonial-container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #c00;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-slide {
+           
+            padding: 60px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+        }
+        
+        .testimonial-slide::before {
+            content: "“";
+            font-size: 100px;
+            color: #c00;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+        
+        .testimonial-slide p {
+            font-size: 22px;
+            line-height: 1.6;
+            color:black;
+            font-family: var(--font_family_body);
+            margin-bottom: 30px;
+        }
+        
+        .student-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            
+        }
+        
+        .student-info img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid #160092;
+        }
+        
+        .student-info h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+        
+        
+        
+        /* Navigation buttons */
+        .nav-buttons {
+            position: absolute;
+            right:200px;
+          
+            
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-30%);
+        }
+        
+        .nav-buttons button {
+            background-color: #c00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .nav-buttons button:hover {
+            background-color: #a00;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    <section class="testimonial-container">
+        <h1>Cảm nhận khách hàng</h1>
+        <div class="testimonial-slide active">
+            <p>"Một trong những câu chuyện thành công nổi bật tại ENGONOW TUTOR là em Nguyễn Ngọc Quỳnh Anh, học sinh từng gặp khó khăn trong việc học toán. Nhờ sự hướng dẫn tận tâm của gia sư tại trung tâm, em đã cải thiện đáng kể kết quả học tập và đạt điểm mong muốn trong kỳ thi tuyển sinh lớp 10, mở ra nhiều cơ hội học tập trong tương lai.
+                "</p>
+            <div class="student-info">
+                <img src="./access/tutor_14.jpg" alt="Ảnh học viên">
+                <div>
+                    <h3>Học Sinh Đạt Thành Tích Cao Trong Kỳ Thi Tuyển Sinh Lớp 10</h3>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-slide">
+            <p>"Một nhóm học sinh từ trường tư cấp 3 đã cùng nhau học kèm tại ENGONOW TUTOR. Nhờ phương pháp giảng dạy linh hoạt và sự hỗ trợ tận tình của đội ngũ gia sư, tất cả các em đều đạt được điểm số tốt và được nhận vào các trường đại học cao điểm tại TPHCM."</p>
+            <div class="student-info">
+                <img src="./access/tutor_15.jpg" alt="Ảnh học viên">
+                <div>
+                    <h3>Nhóm Học Sinh Được Nhận Vào Trường Đại Học Top</h3>     
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-slide">
+            <p>" Nhiều học sinh tại ENGONOW TUTOR không chỉ cải thiện kết quả học tập mà còn phát triển toàn diện về kỹ năng sống. Em Khánh Ngân, từng rất nhút nhát và thiếu tự tin, đã trở nên tự tin hơn và tham gia tích cực vào các hoạt động ngoại khóa sau khi học tập tại trung tâm.
+                "</p>
+            <div class="student-info">
+                <img src="./access/tutor_16.jpg" alt="Ảnh học viên">
+                <div>
+                    <h3>Học sinh phát triển toàn diện</h3>     
+                </div>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button id="prevBtn">&#9664;</button>
+            <button id="nextBtn">&#9654;</button>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+const slide = document.querySelectorAll('.testimonial-slide');
+const totalSlides = slide.length;
+
+document.getElementById('nextBtn').addEventListener('click', function() {
+    slide[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % totalSlides;
+    slide[currentSlide].classList.add('active');
+});
+
+document.getElementById('prevBtn').addEventListener('click', function() {
+    slide[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    slide[currentSlide].classList.add('active');
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Deals</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .combo-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding-bottom: 10px;
+        }
+        .combo-slider::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+        .combo-card {
+            flex: 0 0 32%;
+            scroll-snap-align: start;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .combo-card:hover {
+            transform: scale(1.05);
+        }
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .price {
+            color: #ff3366;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .add-btn {
+            background-color: #ff3366!important;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 40px;
+            font-size: 24px;
+            line-height: 20px;
+        }
+        .add-btn:hover {
+            background-color: #ff0044!important;
+            color:white!important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+    <!-- Header section with title and "Xem thêm" button -->
+    <div class="section-header">
+        <h2 class="text-left">ƯU ĐÃI ĐẶC BIỆT</h2>
+        <button class="btn btn-link">Xem tất cả &rarr;</button>
+    </div>
+
+    <!-- Combo slider container -->
+    <div class="combo-slider">
+        <!-- Combo 69K -->
+        <div class="card combo-card">
+            <img src="combo69k.jpg" class="card-img-top" alt="Combo 69K">
+            <div class="card-body text-center">
+                <h5 class="card-title">Combo 69K</h5>
+                <p>01 Gà rán<br>01 Mì ý (M)</p>
+                <div class="price-section">
+                    <span class="price">69.000 đ</span>
+                    <span class="old-price">101.000 đ</span>
+                    <button class="btn add-btn">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- Combo 119K -->
+        <div class="card combo-card">
+            <img src="combo119k.jpg" class="card-img-top" alt="Combo 119K">
+            <div class="card-body text-center">
+                <h5 class="card-title">Combo 119K</h5>
+                <p>01 Gà rán<br>01 Burger Bulgogi</p>
+                <div class="price-section">
+                    <span class="price">119.000 đ</span>
+                    <span class="old-price">163.000 đ</span>
+                    <button class="btn add-btn">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- Combo Burger Cơm Kim Chi Upsize -->
+        <div class="card combo-card">
+            <img src="comboBurgerKimChi.jpg" class="card-img-top" alt="Combo Burger Cơm Kim Chi Upsize">
+            <div class="card-body text-center">
+                <h5 class="card-title">Combo Burger Cơm Kim Chi Upsize</h5>
+                <p>01 Burger Cơm Kim Chi<br>01 Khoai tây lắc</p>
+                <div class="price-section">
+                    <span class="price">93.000 đ</span>
+                    <span class="old-price">126.000 đ</span>
+                    <button class="btn add-btn">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- Combo More Cards Example -->
+        <div class="card combo-card">
+            <img src="comboExample.jpg" class="card-img-top" alt="Combo Example">
+            <div class="card-body text-center">
+                <h5 class="card-title">Combo Example</h5>
+                <p>Example Item<br>Example Description</p>
+                <div class="price-section">
+                    <span class="price">99.000 đ</span>
+                    <span class="old-price">150.000 đ</span>
+                    <button class="btn add-btn">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add more combo cards as needed -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

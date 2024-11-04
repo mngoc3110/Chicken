@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu chuyện thành công</title>
+    <style>
+       
+        .success-story-container {
+            width: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .success-story-container h1 {
+            color: red;
+            font-size: 24px;
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        .quote {
+            display: none;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .quote.active {
+            display: block;
+        }
+        .quote:before {
+            content: "“";
+            font-size: 24px;
+            color: red;
+            position: absolute;
+            left: -20px;
+            top: -10px;
+        }
+        .quote:after {
+            content: "”";
+            font-size: 24px;
+            color: red;
+            position: absolute;
+            right: -20px;
+            bottom: -10px;
+        }
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .student-info .icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #0000ff;
+            border-radius: 50%;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-story-container">
+        <h1>Câu chuyện thành công</h1>
+
+        <!-- Phản hồi 1 -->
+        <div class="quote active">
+            <p>"Một trong những câu chuyện thành công nổi bật tại ENGONOW TUTOR là em Nguyễn Ngọc Quỳnh Anh, học sinh từng gặp khó khăn trong việc học toán. Nhờ sự hướng dẫn tận tâm của gia sư tại trung tâm, em đã cải thiện đáng kể kết quả học tập và đạt điểm mong muốn trong kỳ thi tuyển sinh lớp 10, mở ra nhiều cơ hội học tập trong tương lai."</p>
+            <div class="student-info">
+                <div class="icon"></div>
+                <span>Học Sinh Đạt Thành Tích Cao Trong Kỳ Thi Tuyển Sinh Lớp 10</span>
+            </div>
+        </div>
+
+        <!-- Phản hồi 2 -->
+        <div class="quote">
+            <p>"Phản hồi thứ hai về học sinh khác tại ENGONOW TUTOR..."</p>
+            <div class="student-info">
+                <div class="icon"></div>
+                <span>Học Sinh Đạt Thành Tích Cao Khác</span>
+            </div>
+        </div>
+
+        <!-- Phản hồi 3 -->
+        <div class="quote">
+            <p>"Phản hồi thứ ba về một học sinh khác đã cải thiện kết quả học tập nhờ ENGONOW TUTOR..."</p>
+            <div class="student-info">
+                <div class="icon"></div>
+                <span>Học Sinh Đạt Thành Tích Cao Trong Kỳ Thi Tuyển Sinh Lớp 10</span>
+            </div>
+        </div>
+
+        <!-- Nút phân trang -->
+        <div class="pagination">
+            <button onclick="prevQuote()">&lt;</button>
+            <button onclick="nextQuote()">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const quotes = document.querySelectorAll('.quote');
+
+        function showQuote(index) {
+            quotes.forEach((quote, i) => {
+                quote.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextQuote() {
+            currentIndex = (currentIndex + 1) % quotes.length;
+            showQuote(currentIndex);
+        }
+
+        function prevQuote() {
+            currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+            showQuote(currentIndex);
+        }
+
+        // Hiển thị phản hồi đầu tiên khi trang tải
+        showQuote(currentIndex);
+    </script>
+</body>
+</html>

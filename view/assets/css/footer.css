@@ -1,0 +1,72 @@
+footer {
+    margin-top:100px;
+    background-color:#a3251c; /* Màu nền tối */
+    color: #fff; /* Màu chữ */
+    padding: 100px 80px; /* Khoảng đệm cho footer */
+}
+
+.footer-container {
+    display: flex; /* Sử dụng flexbox cho các box */
+    justify-content: space-around; /* Căn giữa các box */
+    flex-wrap: wrap; /* Đảm bảo box xuống hàng trên màn hình nhỏ */
+    max-width: 1400px; /* Đặt chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa footer */
+}
+
+.footer-box {
+    flex: 1; /* Cho phép box chiếm không gian đều */
+    min-width: 200px; /* Đặt chiều rộng tối thiểu */
+    margin: 10px; /* Khoảng cách giữa các box */
+}
+
+.footer-main-text {
+    color:#FFE675;
+    font-size: 20px; /* Kích thước chữ cho tiêu đề */
+    font-weight: bold; /* Đậm chữ */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+.footer-sub-text {
+    font-size: 16px; /* Kích thước chữ cho nội dung */
+    margin-bottom: 10px; /* Khoảng cách dưới từng dòng nội dung */
+    color:white;
+}
+.footer-sub-text a{
+    color:white;
+    text-decoration: none;
+}   
+.footer-mail-inbox-container {
+    display: flex; /* Sử dụng flexbox cho ô nhập mail */
+    margin-top: 10px; /* Khoảng cách trên */
+}
+
+.footer-mail-inbox {
+    flex: 1; /* Ô nhập chiếm không gian còn lại */
+    padding: 10px; /* Khoảng đệm cho ô nhập */
+    border: none; /* Bỏ đường viền */
+    border-radius: 4px; /* Bo góc */
+    margin-right: 10px; /* Khoảng cách bên phải */
+}
+
+.footer-mail-inbox-button {
+    background-color:#FFE675; /* Màu nền cho nút */
+    color: black; /* Màu chữ */
+    font-weight: bold;
+    border: none; /* Bỏ đường viền */
+    padding: 10px 15px; /* Khoảng đệm cho nút */
+    border-radius: 4px; /* Bo góc */
+    cursor: pointer; /* Con trỏ khi hover */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.footer-mail-inbox-button:hover {
+    background-color:#CB0000; /* Màu nền khi hover */
+    color:white;
+}
+
+/* Biểu tượng mạng xã hội */
+.footer-icon-container {
+    display: flex; /* Sử dụng flexbox cho biểu tượng */
+    gap: 10px; /* Khoảng cách giữa các biểu tượng */
+    margin-top: 10px; /* Khoảng cách trên cho biểu tượng mạng xã hội */
+}
